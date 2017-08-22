@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-navbar>
+    <ion-title>
+      Your profile
+    </ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row class="profile-details--row">
+      <img class="profile--image" src="assets/img/userPlaceholder.png"/>
+      <div class="profile-about--content">
+        <div class="details--row">
+          <p class="details--type">Name: </p>
+         <p> {{ userData.name }}</p>
+        </div>
+        <div class="details--row">
+          <p class="details--type">Age: </p>
+          <p> {{ userData.age }}</p>
+        </div>
+      </div>
+    </ion-row>
+    <div class="more-information--row">
+      <h5>More information</h5>
+    </div>
+    <ion-row>
+      <div class="details--row">
+        <p class="details--type">Weight: </p>
+        <p> {{ userData.weight }}</p>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="details--row">
+        <p class="details--type">Actual BMI: </p>
+        <p> {{ userData.actualBMI }}</p>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="details--row">
+        <p class="details--type">Calories per day: </p>
+        <p> {{ userData.caloriesPerDay }}</p>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="details--row">
+        <p class="details--type">Calories eaten: </p>
+        <p> {{ userData.caloriesToday }}</p>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="details--row">
+        <p class="details--type">Calories burnt: </p>
+        <p> {{ userData.burntCalories }}</p>
+      </div>
+    </ion-row>
+    <ion-row>
+      <div class="details--row">
+        <p class="details--type">Exercises: </p>
+        <p> {{ userData.exercises }}</p>
+      </div>
+    </ion-row>
+  </ion-grid>
+</ion-content>

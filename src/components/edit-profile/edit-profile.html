@@ -1,0 +1,45 @@
+<ion-content>
+  <ion-row>
+    <h3>Edit your profile</h3>
+  </ion-row>
+  <ion-row>
+    <div class="photo-edit--row" (click)="changeImageModal()">
+      <img src="assets/img/userPlaceholder.png"/>
+      <span>Edit photo</span>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="name--surname--row">
+      <span> Name:</span><br>
+      <input type="text"/>
+    </div>
+    <div class="name--surname--row">
+      <span> Surname:</span><br>
+      <input type="text"/>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="one-option--row">
+      <span> E-mail:</span><br>
+      <input type="text"/>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="one-option--row">
+      <span> Login:</span><br>
+      <input type="text"/>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="one-option--row">
+      <span> Password:</span><br>
+      <input type="text"/>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="buttons-row">
+      <button class="btn btn-info" (click)="closeModal()">save</button>
+      <button class="btn btn-info" (click)="closeModal()">cancel</button>
+    </div>
+  </ion-row>
+</ion-content>

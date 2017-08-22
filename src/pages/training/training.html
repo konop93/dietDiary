@@ -1,0 +1,41 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Ćwiczenia</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+<!--(ionInput)="onInput($event)"-->
+<!--(ionCancel)="onCancel($event)"-->
+
+<ion-content padding>
+  <ion-grid class="receipes--content">
+    <ion-row>
+      <ion-searchbar
+        [(ngModel)]="myInput"
+        [showCancelButton]="shouldShowCancel"
+      >
+      </ion-searchbar>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>Bieg w wolnym tempie</ion-card-header>
+        <ion-card-content>Średnio spalone kalorie: 300KCAL</ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>Bieg w wolnym tempie</ion-card-header>
+        <ion-card-content>Średnio spalone kalorie: 300KCAL</ion-card-content>
+      </ion-card>
+    </ion-row>
+    <ion-row>
+      <ion-card>
+        <ion-card-header>Bieg w wolnym tempie</ion-card-header>
+        <ion-card-content>Średnio spalone kalorie: 300KCAL</ion-card-content>
+      </ion-card>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

@@ -1,2 +1,14 @@
 page-login {
+  ion-content {
+    margin-top: 60px;
+  }
+  ion-title {
+    text-align: center;
+    text-transform: uppercase;
+  }
+  .scroll-content {
+    display:flex;
+    justify-content:center;
+    align-items:center;
+  }
 }
