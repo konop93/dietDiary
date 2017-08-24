@@ -21,12 +21,12 @@ export class RecipePage {
               private _userService: UserDataProvider,
               public settings: Settings,
               public navParams: NavParams,
-              public modalCtrl: ModalController,
-              public translate: TranslateService) {
+              public modalCtrl: ModalController) {
     this._dishesService.getDishes()
       .subscribe(
         response => {
           this.recipes = response;
+          console.log(this.recipes);
         },
         error => console.error(error)
       );

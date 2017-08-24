@@ -1,6 +1,6 @@
-import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
-import { Api } from '../api';
+import {Injectable} from '@angular/core';
+import {Http} from '@angular/http';
+import {Api} from '../api';
 import 'rxjs/add/operator/map';
 import 'rxjs/add/operator/toPromise';
 
@@ -12,23 +12,29 @@ export class UserDataProvider {
     name: 'Agnieszka',
     age: 21,
     weight: 45,
-    height:170,
+    height: 170,
     caloriesPerDay: 2000,
     caloriesToday: 0,
     burntCalories: 0,
-    exercises:0,
+    exercises: 0,
     dietChosen: 'firstDiet'
   };
 
   constructor(public http: Http, public api: Api) {
   }
 
-  getUserData(){
+  getUserData() {
     return this.userData;
   }
-  saveData(type,calories){
+
+  saveData(type, calories) {
     this.userData[type] += calories
   }
+
+  saveDiet(diet) {
+    this.userData.dietChosen = diet;
+  }
+
   login(accountInfo: any) {
     let seq = this.api.post('login', accountInfo).share();
 

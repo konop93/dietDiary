@@ -1,7 +1,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>Diety</ion-title>
+    <ion-title>Diets</ion-title>
   </ion-navbar>
 
 </ion-header>
@@ -9,37 +9,24 @@
 <ion-content padding>
   <ion-grid>
     <ion-row>
-      <h4>Twoja wybrana dieta</h4>
+      <h4>Your diet</h4>
     </ion-row>
     <ion-row>
       <ion-card>
-        <ion-card-header>Dieta nr 1</ion-card-header>
-        <ion-card-content>Dieta odchudzająca</ion-card-content>
+        <ion-card-header>Name:</ion-card-header>
+        <ion-card-content>Calories:</ion-card-content>
       </ion-card>
     </ion-row>
     <ion-row>
-      <h5>Przeglądaj diety</h5>
+      <h5>See more diets:</h5>
     </ion-row>
 
-    <ion-row>
+    <ion-row *ngFor="let diet of diets"  (click)="chosenModal(diet)">
       <ion-card>
-        <ion-card-header>Dieta nr 2</ion-card-header>
-        <ion-card-content>Dieta odchudzająca</ion-card-content>
-      </ion-card>
-    </ion-row>
-
-    <ion-row>
-      <ion-card>
-        <ion-card-header>Dieta nr 3</ion-card-header>
-        <ion-card-content>Dieta odchudzająca</ion-card-content>
+          <ion-card-header>Name: {{ diet.name }}</ion-card-header>
+          <ion-card-content>Calories: {{diet.calories}}</ion-card-content>
       </ion-card>
     </ion-row>
 
-    <ion-row>
-      <ion-card>
-        <ion-card-header>Dieta nr 4</ion-card-header>
-        <ion-card-content>Dieta odchudzająca</ion-card-content>
-      </ion-card>
-    </ion-row>
   </ion-grid>
 </ion-content>

@@ -14,6 +14,7 @@ export class ProfilePage {
   startedStep = 0;
   getStep;
   started;
+  msg;
 
   constructor(public navCtrl: NavController,
               private _userDataService: UserDataProvider,
@@ -26,5 +27,6 @@ export class ProfilePage {
     this._stepCounter.start(this.startedStep)
       .then(onSuccess => this.started = onSuccess,
         onFailure => this.started = onFailure);
+    this._stepCounter.deviceCanCountSteps().then(success => {this.msg = success}, error => {this.msg = error})
   }
 }

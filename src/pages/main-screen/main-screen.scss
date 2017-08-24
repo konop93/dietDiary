@@ -5,12 +5,11 @@ page-welcome {
   }
   .splash-bg {
     position: relative;
-    background: url('../assets/img/loginBackground.png') no-repeat transparent;
+    background: url('../assets/img/loginBackground.png') repeat-x transparent;
     background-size: cover;
     height: 60%;
     width:100%;
     z-index: 1;
-    background-repeat: repeat-x;
     animation: animatedBackground 5s linear infinite;
   }
 
@@ -52,8 +51,4 @@ page-welcome {
       background-color: rgb(220, 220, 220);
     }
   }
-}
-ion-content{
-  background: url("../../assets/img/image8.png") no-repeat 50% 0;
-  background-size: cover;
 }

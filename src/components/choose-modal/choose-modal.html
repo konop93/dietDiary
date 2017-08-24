@@ -6,16 +6,29 @@
       <ion-card-content>Category: {{ items?.category}}</ion-card-content>
     </ion-card>
     <span>Did you eat it?</span>
+    <button class="button-content" (click)="closeModalSuccess()">Yes!</button>
+    <button class="button-content" (click)="closeModal()">Not yet...</button>
   </div>
   <div class="modal--section" *ngIf="type === 'exercises'">
     <span>You chosen this exercise:</span>
-    <ion-card *ngIf="type === 'exercise'">
+    <ion-card>
       <ion-card-header>Product: {{ items?.name}}</ion-card-header>
       <ion-card-content>Category: {{ items?.license_author}}</ion-card-content>
     </ion-card>
     <span>Did you make it?</span>
+    <button class="button-content" (click)="closeModalSuccess()">Yes!</button>
+    <button class="button-content" (click)="closeModal()">Not yet...</button>
   </div>
-  <button class="button-content" (click)="closeModalSuccess()">Yes!</button>
-  <button class="button-content" (click)="closeModal()">Not yet...</button>
+  <div class="modal--section-diet" *ngIf="type === 'diet'">
+    <span>You chosen this diet:</span>
+    <ion-card>
+      <ion-card-header>Diet: {{ items?.name}}</ion-card-header>
+      <ion-card-content>Calories: {{ items?.calories}}</ion-card-content>
+    </ion-card>
+    <span>What do you want to do?</span>
+    <button class="button-content" (click)="closeModalDiet()">Choose it!</button>
+    <a [href]="items.url"><button class="button-content" (click)="closeModalSuccess()">See it!</button></a>
+    <button class="button-content" (click)="closeModal()">Close it!</button>
+  </div>
 </div>
 
