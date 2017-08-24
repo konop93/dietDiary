@@ -60,14 +60,10 @@
         <p> {{ userData.exercises }}</p>
       </div>
     </ion-row>
+    <ion-row> {{startedStep}}</ion-row>
     <ion-row> {{started}}</ion-row>
-    <ion-row> {{getStep}}</ion-row>
-    <ion-row> {{stopStep}}</ion-row>
     <ion-row>
       <button class="button-content" (click)="startStepCounter()">Zacznij</button>
-    </ion-row>
-    <ion-row>
-      <button class="button-content" (click)="showSteps()">Pobierz kroki</button>
     </ion-row>
   </ion-grid>
 </ion-content>

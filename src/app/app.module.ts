@@ -32,7 +32,6 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UserDataProvider } from '../providers/user-data/user-data';
 import { DishesProvider } from '../providers/dishes/dishes';
 import { ExercisesProvider } from '../providers/exercises/exercises';
-import { StepCounterProvider } from '../providers/step-counter/step-counter';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -106,7 +105,6 @@ export function provideSettings(storage: Storage) {
     UserDataProvider,
     DishesProvider,
     ExercisesProvider,
-    StepCounterProvider
   ]
 })
 export class AppModule { }
