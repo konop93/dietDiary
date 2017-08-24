@@ -3,7 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { HttpModule, Http } from '@angular/http';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { Storage, IonicStorageModule } from '@ionic/storage';
-
+import { Stepcounter } from '@ionic-native/stepcounter';
 import { MyApp } from './app.component';
 
 import { TrainingPage } from '../pages/training/training';
@@ -17,7 +17,6 @@ import { RecipePage } from '../pages/recipe/recipe'
 import { DietPage } from '../pages/diet/diet'
 import { Api } from '../providers/api';
 import { Settings } from '../providers/settings';
-import { User } from '../providers/user';
 
 import { Camera } from '@ionic-native/camera';
 import { GoogleMaps } from '@ionic-native/google-maps';
@@ -33,6 +32,7 @@ import { TranslateHttpLoader } from '@ngx-translate/http-loader';
 import { UserDataProvider } from '../providers/user-data/user-data';
 import { DishesProvider } from '../providers/dishes/dishes';
 import { ExercisesProvider } from '../providers/exercises/exercises';
+import { StepCounterProvider } from '../providers/step-counter/step-counter';
 
 export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
@@ -62,7 +62,7 @@ export function provideSettings(storage: Storage) {
     EditProfileComponent,
     LogoutComponent,
     EditPhotoComponent,
-    ChooseModalComponent
+    ChooseModalComponent,
   ],
   imports: [
     BrowserModule,
@@ -96,8 +96,8 @@ export function provideSettings(storage: Storage) {
   ],
   providers: [
     Api,
-    User,
     Camera,
+    Stepcounter,
     GoogleMaps,
     SplashScreen,
     StatusBar,
@@ -105,7 +105,8 @@ export function provideSettings(storage: Storage) {
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     UserDataProvider,
     DishesProvider,
-    ExercisesProvider
+    ExercisesProvider,
+    StepCounterProvider
   ]
 })
 export class AppModule { }

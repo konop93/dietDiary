@@ -1,8 +1,21 @@
-<div class="">
-  <div class="">
-    <span>You chosen this dish or exercises:</span>
-    <span>Have you done it?</span>
-    <button class="button-content" (click)="closeModal()">I have done it!</button>
-    <button class="button-content" (click)="closeModal()">I haven't done it yet</button>
+<div class="modal--content">
+  <div class="modal--section" *ngIf="type === 'recipes'">
+    <span>You chosen this dish:</span>
+    <ion-card>
+      <ion-card-header>Product: {{ items?.product}}</ion-card-header>
+      <ion-card-content>Category: {{ items?.category}}</ion-card-content>
+    </ion-card>
+    <span>Did you eat it?</span>
   </div>
+  <div class="modal--section" *ngIf="type === 'exercises'">
+    <span>You chosen this exercise:</span>
+    <ion-card *ngIf="type === 'exercise'">
+      <ion-card-header>Product: {{ items?.name}}</ion-card-header>
+      <ion-card-content>Category: {{ items?.license_author}}</ion-card-content>
+    </ion-card>
+    <span>Did you make it?</span>
+  </div>
+  <button class="button-content" (click)="closeModalSuccess()">Yes!</button>
+  <button class="button-content" (click)="closeModal()">Not yet...</button>
 </div>
+

@@ -1,9 +1,13 @@
-import { User } from './user';
-import { Api } from './api';
-import { Settings } from './settings';
+import {Settings} from './settings';
+import {StepCounterProvider} from './step-counter/step-counter'
+import {UserDataProvider} from './user-data/user-data'
+import {ExercisesProvider} from './exercises/exercises'
+import {DishesProvider} from './dishes/dishes'
 
 export {
-User,
-Api,
-Settings,
+  StepCounterProvider,
+  UserDataProvider,
+  ExercisesProvider,
+  DishesProvider,
+  Settings,
 };

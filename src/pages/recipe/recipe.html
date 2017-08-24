@@ -15,7 +15,7 @@
       >
       </ion-searchbar>
     </ion-row>
-    <ion-row *ngFor="let recipe of recipes | slice: 0:limit" (click)="chosenModal()">
+    <ion-row *ngFor="let recipe of recipes | slice: 0:limit" (click)="chosenModal(recipe)">
       <ion-card>
         <ion-card-header>Product: {{ recipe?.product}}</ion-card-header>
         <ion-card-content>Category: {{ recipe?.category}}</ion-card-content>

@@ -33,7 +33,7 @@
     <ion-row>
       <div class="details--row">
         <p class="details--type">Actual BMI: </p>
-        <p> {{ userData.actualBMI }}</p>
+        <p> {{ actualBMI }}</p>
       </div>
     </ion-row>
     <ion-row>
@@ -59,6 +59,15 @@
         <p class="details--type">Exercises: </p>
         <p> {{ userData.exercises }}</p>
       </div>
+    </ion-row>
+    <ion-row> {{startedStep}}</ion-row>
+    <ion-row> {{getStep}}</ion-row>
+    <ion-row> {{stopStep}}</ion-row>
+    <ion-row>
+      <button class="button-content" (click)="startStepCounter()">Zacznij</button>
+    </ion-row>
+    <ion-row>
+      <button class="button-content" (click)="showSteps()">Pobierz kroki</button>
     </ion-row>
   </ion-grid>
 </ion-content>

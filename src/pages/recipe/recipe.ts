@@ -2,8 +2,9 @@ import {Component} from '@angular/core';
 
 import {NavController, NavParams} from 'ionic-angular';
 import {DishesProvider} from '../../providers/dishes/dishes'
+import {UserDataProvider} from '../../providers/user-data/user-data'
 import {ModalController} from 'ionic-angular';
-import { ChooseModalComponent } from '../../components/choose-modal/choose-modal'
+import {ChooseModalComponent} from '../../components/choose-modal/choose-modal'
 import {Settings} from '../../providers/settings';
 
 import {TranslateService} from '@ngx-translate/core';
@@ -14,8 +15,10 @@ import {TranslateService} from '@ngx-translate/core';
 export class RecipePage {
   recipes;
   limit = 20;
+
   constructor(public navCtrl: NavController,
               private _dishesService: DishesProvider,
+              private _userService: UserDataProvider,
               public settings: Settings,
               public navParams: NavParams,
               public modalCtrl: ModalController,
@@ -33,10 +36,14 @@ export class RecipePage {
     setTimeout(() => {
       this.limit += 10;
       infiniteScroll.complete();
-    },500)
+    }, 500)
   }
-  chosenModal() {
-    let newModal = this.modalCtrl.create(ChooseModalComponent);
+
+  chosenModal(recipe) {
+    let newModal = this.modalCtrl.create(ChooseModalComponent, {item: recipe, type: 'recipes'});
+    newModal.onDidDismiss((calories) => {
+      this._userService.saveData('caloriesToday',calories);
+    });
     newModal.present();
   }
 }
