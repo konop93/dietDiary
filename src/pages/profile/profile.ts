@@ -12,7 +12,7 @@ import {NavController} from 'ionic-angular';
 export class ProfilePage {
   userData: any;
   actualBMI: number;
-  startedStep;
+  startedStep = 0;
   stopStep;
   getStep;
   started;
@@ -25,7 +25,9 @@ export class ProfilePage {
   }
 
   startStepCounter() {
-    this._stepCounter.start(this.startedStep).then(steps => this.startedStep = steps);
+    this._stepCounter.start(this.startedStep)
+      .then(onSuccess => this.started = onSuccess,
+        onFailure => this.started = onFailure);
   }
 
   showSteps() {
