@@ -1,16 +1,14 @@
 import {Component} from '@angular/core';
 
 import {NavController, NavParams} from 'ionic-angular';
-import {DishesProvider} from '../../providers/dishes/dishes'
-import {UserDataProvider} from '../../providers/user-data/user-data'
+import {DishesProvider} from '../../../providers/dishes/dishes'
+import {UserDataProvider} from '../../../providers/user-data/user-data'
 import {ModalController} from 'ionic-angular';
-import {ChooseModalComponent} from '../../components/choose-modal/choose-modal'
-import {Settings} from '../../providers/settings';
+import {ChooseModalComponent} from '../../../components/choose-modal/choose-modal'
 
-import {TranslateService} from '@ngx-translate/core';
 @Component({
   selector: 'page-recipe',
-  templateUrl: 'recipe.html'
+  templateUrl: './recipe.html'
 })
 export class RecipePage {
   recipes;
@@ -19,7 +17,6 @@ export class RecipePage {
   constructor(public navCtrl: NavController,
               private _dishesService: DishesProvider,
               private _userService: UserDataProvider,
-              public settings: Settings,
               public navParams: NavParams,
               public modalCtrl: ModalController) {
     this._dishesService.getDishes()

@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import {ViewController, NavParams} from 'ionic-angular';
+import {ModalController} from 'ionic-angular';
 
 @Component({
   selector: 'choose-modal',
@@ -10,12 +11,11 @@ export class ChooseModalComponent {
   type: any;
   calories;
   constructor(public viewCtrl: ViewController,
+              public modalCtrl: ModalController,
               public params: NavParams) {
     this.items = params.get('item');
     this.type = params.get('type');
-    console.log(this.items);
   };
-
   closeModalDiet(){
     this.viewCtrl.dismiss(this.items.id);
   }

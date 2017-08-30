@@ -8,13 +8,6 @@
 
 <ion-content padding>
   <ion-grid class="recipes--content">
-    <ion-row>
-      <ion-searchbar
-        [(ngModel)]="myInput"
-        [showCancelButton]="shouldShowCancel"
-      >
-      </ion-searchbar>
-    </ion-row>
     <ion-row *ngFor="let exercise of exercises | slice: 0:limit" (click)="chosenModal(exercise)">
       <ion-card>
         <ion-card-header>Product: {{ exercise?.name}}</ion-card-header>

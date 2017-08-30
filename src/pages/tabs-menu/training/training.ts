@@ -1,9 +1,9 @@
 import {Component} from '@angular/core';
-import {ExercisesProvider} from '../../providers/exercises/exercises'
-import {UserDataProvider} from '../../providers/user-data/user-data'
+import {ExercisesProvider} from '../../../providers/exercises/exercises'
+import {UserDataProvider} from '../../../providers/user-data/user-data'
 import {NavController, NavParams} from 'ionic-angular';
 import {ModalController} from 'ionic-angular';
-import { ChooseModalComponent } from '../../components/choose-modal/choose-modal'
+import { ChooseModalComponent } from '../../../components/choose-modal/choose-modal'
 @Component({
   selector: 'page-cards',
   templateUrl: 'training.html'

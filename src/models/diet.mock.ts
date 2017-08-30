@@ -1,33 +1,33 @@
 export const DIET = [
   {
-    id: '1',
+    id:1,
     name: 'First Diet',
     calories: 1200,
-    url: 'assets/diets/1200CaloriesDiet.pdf'
+    url: 'https://drive.google.com/file/d/0BwlGj81dlnxnY3ZqZkpsdEw0M1k/view?usp=sharing'
   },
   {
-    id: '2',
+    id: 2,
     name: 'Second Diet',
     calories: 1500,
-    url: 'assets/diets/1500CaloriesDiet.pdf'
+    url: 'https://drive.google.com/file/d/0BwlGj81dlnxna2hrUmNHSUVEakU/view?usp=sharing'
   },
   {
-    id: '3',
+    id: 3,
     name: 'Third Diet',
     calories: 1600,
-    url: 'assets/diets/1600CaloriesDiet.pdf'
+    url: 'https://drive.google.com/file/d/0BwlGj81dlnxnNnZUMDZsNE1TYUk/view?usp=sharing'
   },
   {
-    id: '4',
+    id: 4,
     name: 'Fourth Diet',
     calories: 2000,
-    url: 'assets/diets/2000CaloriesDiet.pdf'
+    url: 'https://drive.google.com/file/d/0BwlGj81dlnxna1FFUUdZTDRLZFU/view?usp=sharing'
   },
   {
-    id: '5',
+    id: 5,
     name: 'Fifth Diet',
     calories: 2200,
-    url: 'assets/diets/2200CaloriesDiet.pdf'
+    url: 'https://drive.google.com/file/d/0BwlGj81dlnxndWw3ZVR4WHNYNTQ/view?usp=sharing'
   }
 ];
 

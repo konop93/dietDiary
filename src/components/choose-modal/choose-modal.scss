@@ -18,6 +18,15 @@ choose-modal {
       span {
         margin:25px;
       }
+      .button-content {
+        width: 150px;
+        height: 55px;
+        background: #4db6ac;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 15px;
+      }
     }
     .modal--section {
       height: 45%;
@@ -29,15 +38,15 @@ choose-modal {
       span {
         margin:25px;
       }
-    }
-    .button-content {
-      width: 75%;
-      height: 35px;
-      background: #4db6ac;
-      color: white;
-      font-size: 18px;
-      font-weight: 500;
-      margin-top: 15px;
+      .button-content {
+        width: 150px;
+        height: 55px;
+        background: #4db6ac;
+        color: white;
+        font-size: 18px;
+        font-weight: 500;
+        margin-top: 15px;
+      }
     }
   }
 

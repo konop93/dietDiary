@@ -1,16 +1,15 @@
 import {Component} from '@angular/core';
 import {NavController, NavParams} from 'ionic-angular';
 import {ModalController} from 'ionic-angular';
-import {LogoutComponent} from "../../components/logout/logout";
-import {EditProfileComponent} from "../../components/edit-profile/edit-profile";
+import {LogoutComponent} from "../../../components/logout/logout";
+import {EditProfileComponent} from "../../../components/edit-profile/edit-profile";
 
-import {Settings} from '../../providers/settings';
 
 import {TranslateService} from '@ngx-translate/core';
 
 @Component({
   selector: 'page-settings',
-  templateUrl: 'settings.html'
+  templateUrl: './settings.html'
 })
 export class SettingsPage {
   options: any;
@@ -19,7 +18,6 @@ export class SettingsPage {
   pageTitleKey: string = 'SETTINGS_TITLE';
 
   constructor(public navCtrl: NavController,
-              public settings: Settings,
               public navParams: NavParams,
               public modalCtrl: ModalController,
               public translate: TranslateService) {

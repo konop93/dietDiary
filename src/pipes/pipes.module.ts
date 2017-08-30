@@ -1,11 +1,8 @@
 import { NgModule } from '@angular/core';
-import { DishesPipe } from './dishes/dishes';
 import { LimitToPipe } from './limit-to/limit-to';
 @NgModule({
-	declarations: [DishesPipe,
-    LimitToPipe],
+	declarations: [LimitToPipe],
 	imports: [],
-	exports: [DishesPipe,
-    LimitToPipe]
+	exports: [LimitToPipe]
 })
 export class PipesModule {}

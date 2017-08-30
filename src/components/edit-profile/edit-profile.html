@@ -3,43 +3,52 @@
     <h3>Edit your profile</h3>
   </ion-row>
   <ion-row>
-    <div class="photo-edit--row" (click)="changeImageModal()">
-      <img src="assets/img/userPlaceholder.png"/>
-      <span>Edit photo</span>
-    </div>
-  </ion-row>
-  <ion-row>
-    <div class="name--surname--row">
-      <span> Name:</span><br>
-      <input type="text"/>
-    </div>
-    <div class="name--surname--row">
-      <span> Surname:</span><br>
-      <input type="text"/>
+    <div class="photo-edit--row">
+      <img [src]="users[0].user_url"/>
+      <input [(ngModel)]="users[0].user_url" type="text"/>
     </div>
   </ion-row>
   <ion-row>
     <div class="one-option--row">
+      <span> Name:</span><br>
+      <input [(ngModel)]="users[0].user_name" type="text"/>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="one-option--row">
+      <span> Weight:</span><br>
+      <input [(ngModel)]="users[0].user_weight" type="text"/>
+    </div>
+  </ion-row>
+  <ion-row>
+    <div class="one-option--row">
+      <span> Height:</span><br>
+      <input [(ngModel)]="users[0].user_height" type="number"/>
+    </div>
+  </ion-row>
+
+  <ion-row>
+    <div class="one-option--row">
       <span> E-mail:</span><br>
-      <input type="text"/>
+      <input [(ngModel)]="users[0].user_email" type="text"/>
     </div>
   </ion-row>
   <ion-row>
     <div class="one-option--row">
       <span> Login:</span><br>
-      <input type="text"/>
+      <input [(ngModel)]="users[0].user_login" type="text"/>
     </div>
   </ion-row>
   <ion-row>
     <div class="one-option--row">
       <span> Password:</span><br>
-      <input type="text"/>
+      <input [(ngModel)]="users[0].user_password" type="text"/>
     </div>
   </ion-row>
   <ion-row>
     <div class="buttons-row">
-      <button class="btn btn-info" (click)="closeModal()">save</button>
-      <button class="btn btn-info" (click)="closeModal()">cancel</button>
+      <button class="btn btn-info" (click)="saveChanges()">Save</button>
+      <button class="btn btn-info" (click)="closeModal()">Cancel</button>
     </div>
   </ion-row>
 </ion-content>

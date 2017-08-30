@@ -1,10 +1,10 @@
-import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, ToastController} from 'ionic-angular';
 
-import { MainPage } from '../../pages/pages';
-import { UserDataProvider } from '../../providers/user-data/user-data';
+import {MainScreenPage} from '../../pages/main-screen/main-screen';
+import {UserDataProvider} from '../../providers/user-data/user-data';
 
-import { TranslateService } from '@ngx-translate/core';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -12,37 +12,33 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'register.html'
 })
 export class RegisterPage {
-  account: { name: string, email: string, password: string } = {
-    name: 'Test Human',
-    email: 'test@example.com',
-    password: 'test'
+  account: { user_id: number, user_name: string, user_age: number,user_login: string,user_email: string, user_password: string, user_weight: number, user_height: number, user_diet: number, user_url: string } = {
+    user_id: Date.now(),
+    user_name: '',
+    user_age: 0,
+    user_login: '',
+    user_email: '',
+    user_password: '',
+    user_weight: 0,
+    user_height: 0,
+    user_diet: 0,
+    user_url: ''
   };
 
   private signupErrorString: string;
+  private signupSuccess: string;
 
   constructor(public navCtrl: NavController,
-    public user: UserDataProvider,
-    public toastCtrl: ToastController,
-    public translateService: TranslateService) {
-
-    this.translateService.get('SIGNUP_ERROR').subscribe((value) => {
-      this.signupErrorString = value;
-    })
+              public user: UserDataProvider,
+              public toastCtrl: ToastController,
+              public translateService: TranslateService) {
+    this.signupErrorString = 'Błąd podczas rejestracji';
+    this.signupSuccess = 'Rejestracja zakończona powodz podczas rejestracji';
   }
 
   doSignup() {
     this.user.signup(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
-    }, (err) => {
-
-      this.navCtrl.push(MainPage); // TODO: Remove this when you add your signup endpoint
-
-      let toast = this.toastCtrl.create({
-        message: this.signupErrorString,
-        duration: 3000,
-        position: 'top'
-      });
-      toast.present();
+      this.navCtrl.push(MainScreenPage);
     });
   }
 }

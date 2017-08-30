@@ -1,11 +1,12 @@
-import { Component } from '@angular/core';
-import { NavController, ToastController } from 'ionic-angular';
+import {Component} from '@angular/core';
+import {NavController, ToastController} from 'ionic-angular';
+import {Http, Headers} from '@angular/http';
 
-import { MainPage } from '../../pages/pages';
+import {MainPage} from '../../pages/pages';
 
-import { UserDataProvider } from '../../providers/user-data/user-data';
+import {UserDataProvider} from '../../providers/user-data/user-data';
 
-import { TranslateService } from '@ngx-translate/core';
+import {TranslateService} from '@ngx-translate/core';
 
 
 @Component({
@@ -13,40 +14,43 @@ import { TranslateService } from '@ngx-translate/core';
   templateUrl: 'login.html'
 })
 export class LoginPage {
-  // The account fields for the login form.
-  // If you're using the username field with or without email, make
-  // sure to add it to the type
-  account: { email: string, password: string } = {
-    email: 'test@example.com',
-    password: 'test'
+  account: { login: string, password: string } = {
+    login: '',
+    password: ''
   };
-
-  // Our translated text strings
+  userData: any;
   private loginErrorString: string;
 
   constructor(public navCtrl: NavController,
-    public user: UserDataProvider,
-    public toastCtrl: ToastController,
-    public translateService: TranslateService) {
+              public user: UserDataProvider,
+              public toastCtrl: ToastController,
+              public http: Http,
+              public translateService: TranslateService) {
 
     this.translateService.get('LOGIN_ERROR').subscribe((value) => {
       this.loginErrorString = value;
     })
   }
 
-  // Attempt to login in through our User service
   doLogin() {
-    this.user.login(this.account).subscribe((resp) => {
-      this.navCtrl.push(MainPage);
-    }, (err) => {
-      this.navCtrl.push(MainPage);
-      // Unable to log in
-      let toast = this.toastCtrl.create({
-        message: this.loginErrorString,
-        duration: 3000,
-        position: 'top'
+    this.user.login(this.account)
+      .subscribe(res => {
+        if (res.status === 200) {
+          this.navCtrl.push(MainPage);
+        } else {
+          let toast = this.toastCtrl.create({
+            message: this.loginErrorString,
+            duration: 3000,
+            position: 'top'
+          });
+          toast.present();
+        }
       });
-      toast.present();
-    });
   }
+
+  getUserData(){
+    return this.userData;
+  }
+
+
 }

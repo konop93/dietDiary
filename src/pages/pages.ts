@@ -1,10 +1,10 @@
-import {SettingsPage} from './settings/settings';
+import {SettingsPage} from './tabs-menu/settings/settings';
 import {TabsPage} from './tabs/tabs';
 import {LoginPage} from './login/login';
-import {TrainingPage} from './training/training'
-import {ProfilePage} from './profile/profile'
-import {RecipePage} from './recipe/recipe'
-import {DietPage} from './diet/diet'
+import {TrainingPage} from './tabs-menu/training/training'
+import {ProfilePage} from './tabs-menu/profile/profile'
+import {RecipePage} from './tabs-menu/recipe/recipe'
+import {DietPage} from './tabs-menu/diet/diet'
 
 export const LoginRegisterPage = LoginPage;
 

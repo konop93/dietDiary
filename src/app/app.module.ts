@@ -6,20 +6,16 @@ import { Storage, IonicStorageModule } from '@ionic/storage';
 import { Stepcounter } from '@ionic-native/stepcounter';
 import { MyApp } from './app.component';
 
-import { TrainingPage } from '../pages/training/training';
-import { ProfilePage } from '../pages/profile/profile';
+import { TrainingPage } from '../pages/tabs-menu/training/training';
+import { ProfilePage } from '../pages/tabs-menu/profile/profile';
 import { LoginPage } from '../pages/login/login';
-import { SettingsPage } from '../pages/settings/settings';
+import { SettingsPage } from '../pages/tabs-menu/settings/settings';
 import { RegisterPage } from '../pages/register/register';
 import { TabsPage } from '../pages/tabs/tabs';
 import { MainScreenPage } from '../pages/main-screen/main-screen';
-import { RecipePage } from '../pages/recipe/recipe'
-import { DietPage } from '../pages/diet/diet'
+import { RecipePage } from '../pages/tabs-menu/recipe/recipe'
+import { DietPage } from '../pages/tabs-menu/diet/diet'
 import { Api } from '../providers/api';
-import { Settings } from '../providers/settings';
-
-import { Camera } from '@ionic-native/camera';
-import { GoogleMaps } from '@ionic-native/google-maps';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
@@ -37,14 +33,6 @@ export function HttpLoaderFactory(http: Http) {
   return new TranslateHttpLoader(http, './assets/i18n/', '.json');
 }
 
-export function provideSettings(storage: Storage) {
-  return new Settings(storage, {
-    option1: true,
-    option2: 'Ionitron J. Framework',
-    option3: '3',
-    option4: 'Hello'
-  });
-}
 
 @NgModule({
   declarations: [
@@ -74,7 +62,10 @@ export function provideSettings(storage: Storage) {
       }
     }),
     IonicModule.forRoot(MyApp),
-    IonicStorageModule.forRoot()
+    IonicStorageModule.forRoot({
+      name: '__mydb',
+      driverOrder: ['indexeddb', 'sqlite', 'websql']
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [
@@ -91,16 +82,13 @@ export function provideSettings(storage: Storage) {
     EditProfileComponent,
     LogoutComponent,
     EditPhotoComponent,
-    ChooseModalComponent
+    ChooseModalComponent,
   ],
   providers: [
     Api,
-    Camera,
     Stepcounter,
-    GoogleMaps,
     SplashScreen,
     StatusBar,
-    { provide: Settings, useFactory: provideSettings, deps: [Storage] },
     { provide: ErrorHandler, useClass: IonicErrorHandler },
     UserDataProvider,
     DishesProvider,

@@ -6,9 +6,7 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 
 import { MainScreenPage } from '../pages/main-screen/main-screen';
 
-import { Settings } from '../providers/providers';
 
-import { TranslateService } from '@ngx-translate/core'
 
 @Component({
   template: `
@@ -19,28 +17,13 @@ export class MyApp {
 
   @ViewChild(Nav) nav: Nav;
 
-  constructor(private translate: TranslateService, private platform: Platform, settings: Settings, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
-    this.initTranslate();
+  constructor(private platform: Platform, private config: Config, private statusBar: StatusBar, private splashScreen: SplashScreen) {
   }
 
   ionViewDidLoad() {
     this.platform.ready().then(() => {
       this.statusBar.styleDefault();
       this.splashScreen.hide();
-    });
-  }
-
-  initTranslate() {
-    this.translate.setDefaultLang('en');
-
-    if (this.translate.getBrowserLang() !== undefined) {
-      this.translate.use(this.translate.getBrowserLang());
-    } else {
-      this.translate.use('en');
-    }
-
-    this.translate.get(['BACK_BUTTON_TEXT']).subscribe(values => {
-      this.config.set('ios', 'backButtonText', values.BACK_BUTTON_TEXT);
     });
   }
 

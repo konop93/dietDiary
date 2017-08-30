@@ -1,29 +1,52 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title> Register </ion-title>
+    <ion-title> Register</ion-title>
   </ion-navbar>
 
 </ion-header>
 
-
-<ion-content>
   <form (submit)="doSignup()">
     <ion-list>
 
       <ion-item>
         <ion-label fixed>Name:</ion-label>
-        <ion-input type="text" [(ngModel)]="account.name" name="name"></ion-input>
+        <ion-input type="text" [(ngModel)]="account.user_name" name="name"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Age:</ion-label>
+        <ion-input type="text" [(ngModel)]="account.user_age" name="age"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Login:</ion-label>
+        <ion-input type="text" [(ngModel)]="account.user_login" name="login"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>E-mail:</ion-label>
-        <ion-input type="email" [(ngModel)]="account.email" name="email"></ion-input>
+        <ion-input type="email" [(ngModel)]="account.user_email" name="email"></ion-input>
       </ion-item>
 
       <ion-item>
         <ion-label fixed>Password:</ion-label>
-        <ion-input type="password" [(ngModel)]="account.password" name="password"></ion-input>
+        <ion-input type="password" [(ngModel)]="account.user_password" name="password"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Weight:</ion-label>
+        <ion-input type="number" [(ngModel)]="account.user_weight" name="weight"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Height:</ion-label>
+        <ion-input type="number" [(ngModel)]="account.user_height" name="height"></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label fixed>Photo(url):</ion-label>
+        <ion-input type="text" [(ngModel)]="account.user_url" name="photo"></ion-input>
       </ion-item>
 
       <div padding>
@@ -32,4 +55,3 @@
 
     </ion-list>
   </form>
-</ion-content>

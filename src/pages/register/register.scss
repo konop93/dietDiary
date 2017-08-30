@@ -1,11 +1,14 @@
 page-signup {
-  ion-title {
-    text-align: center;
-    text-transform: uppercase;
+  form{
+    background:url('../../assets/img/projectBackground.png') center/cover no-repeat;
+    padding-top:90px;
   }
-  .scroll-content {
-    display:flex;
-    justify-content:center;
-    align-items:center;
+  .item-md {
+    border:none;
+    width:80%;
+    margin:10px auto;
+  }
+  .item-md.item-input.ng-valid.item-input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner, .item-md.item-input.ng-valid.input-has-value:not(.input-has-focus):not(.item-input-has-focus) .item-inner {
+    border:none;
   }
 }
