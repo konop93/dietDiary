@@ -29,7 +29,7 @@ export class ProfilePage {
         onFailure => this.started = onFailure);
     this._stepCounter.deviceCanCountSteps().then(success => {
       if(success == false) {
-        this.msg = "Twój telefon nie wspiera tej usługi..."
+        this.msg = "Twój telefon nie wspiera tej usługi...";
       } else {
         this._stepCounter.getStepCount().then( steps =>
         {

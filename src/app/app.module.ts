@@ -20,7 +20,6 @@ import { SplashScreen } from '@ionic-native/splash-screen';
 import { StatusBar } from '@ionic-native/status-bar';
 
 import { EditProfileComponent } from '../components/edit-profile/edit-profile'
-import { EditPhotoComponent } from '../components/edit-photo/edit-photo'
 import { ChooseModalComponent } from '../components/choose-modal/choose-modal'
 import { LogoutComponent } from '../components/logout/logout'
 import { TranslateModule, TranslateLoader } from '@ngx-translate/core';
@@ -48,7 +47,6 @@ export function HttpLoaderFactory(http: Http) {
     DietPage,
     EditProfileComponent,
     LogoutComponent,
-    EditPhotoComponent,
     ChooseModalComponent,
   ],
   imports: [
@@ -81,7 +79,6 @@ export function HttpLoaderFactory(http: Http) {
     DietPage,
     EditProfileComponent,
     LogoutComponent,
-    EditPhotoComponent,
     ChooseModalComponent,
   ],
   providers: [
