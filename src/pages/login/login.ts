@@ -24,13 +24,10 @@ export class LoginPage {
   constructor(public navCtrl: NavController,
               public user: UserDataProvider,
               public toastCtrl: ToastController,
-              public http: Http,
-              public translateService: TranslateService) {
+              public http: Http) {
   }
 
   doLogin() {
-    NativeStorage.getItem('loginname').then( data => this.account.login = data);
-    NativeStorage.getItem('loginpassword').then( data => this.account.password = data);
     this.user.login(this.account)
       .subscribe(res => {
         if (res.status === 200) {

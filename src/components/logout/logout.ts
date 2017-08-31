@@ -1,5 +1,7 @@
 import {Component} from '@angular/core';
-import {ViewController} from 'ionic-angular';
+import {NavController, ViewController} from 'ionic-angular';
+import { LoginPage } from '../../pages/login/login'
+import {NativeStorage} from 'ionic-native';
 
 @Component({
   selector: 'logout',
@@ -7,9 +9,14 @@ import {ViewController} from 'ionic-angular';
 })
 export class LogoutComponent {
 
-  constructor(public viewCtrl: ViewController) {
+  constructor(public viewCtrl: ViewController,
+              public navCtrl: NavController,) {
   };
-
+  closeModalAndLogout(){
+    NativeStorage.clear().then(data => console.log(data));
+    this.navCtrl.push(LoginPage);
+    this.viewCtrl.dismiss();
+  }
   closeModal() {
     this.viewCtrl.dismiss();
   };
