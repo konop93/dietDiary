@@ -5,7 +5,7 @@
 
 Aplikacja wykonana na zajęcia "Bogate Aplikacje Internetowe" na Uniwersytecie Ekonomicznym w Krakowie.
 
-## Funkcjonalności
+## Funkcjonalności:
 
 1. Możliwość monitorowania dziennego spożycia kalorii
 2. Możliwość wyboru odpowiedniej dla nas diety
@@ -15,6 +15,11 @@ Aplikacja wykonana na zajęcia "Bogate Aplikacje Internetowe" na Uniwersytecie E
 
 Aplikacja dzięki zdobytym informacjom o użytkowniku oblicza BMI użytkownika.
 Dodatkowo na podstawie wybranej diety obliczane są kalorie, które użytkownik powinien spożyć przed zakończeniem dnia.
-### Autorzy
+
+## Technologie:
+
+Aplikacja została stworzona przy użyciu Ionic 3 oraz Angular 4. 
+
+### Autorzy:
 Katarzyna Konopelska 
 Aleksandra Kołodziejczyk
