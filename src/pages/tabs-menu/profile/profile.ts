@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {UserDataProvider} from '../../../providers/user-data/user-data'
 import {Stepcounter} from '@ionic-native/stepcounter';
+import { NativeStorage } from 'ionic-native';
 
 import {NavController} from 'ionic-angular';
 
@@ -15,7 +16,8 @@ export class ProfilePage {
   getStep;
   started;
   msg;
-
+  name: string;
+  password: string;
   constructor(public navCtrl: NavController,
               private _userDataService: UserDataProvider,
               private _stepCounter: Stepcounter) {

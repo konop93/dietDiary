@@ -1,8 +1,8 @@
 import {Component} from '@angular/core';
 import {NavController, ToastController} from 'ionic-angular';
 import {Http, Headers} from '@angular/http';
-
 import {MainPage} from '../../pages/pages';
+import { NativeStorage } from 'ionic-native';
 
 import {UserDataProvider} from '../../providers/user-data/user-data';
 
@@ -26,17 +26,21 @@ export class LoginPage {
               public toastCtrl: ToastController,
               public http: Http,
               public translateService: TranslateService) {
-
-    this.translateService.get('LOGIN_ERROR').subscribe((value) => {
-      this.loginErrorString = value;
-    })
   }
 
   doLogin() {
+    NativeStorage.getItem('loginname').then( data => this.account.login = data);
+    NativeStorage.getItem('loginpassword').then( data => this.account.password = data);
     this.user.login(this.account)
       .subscribe(res => {
         if (res.status === 200) {
           this.navCtrl.push(MainPage);
+
+          NativeStorage.setItem('loginname', this.account.login)
+            .then(() => console.log('Stored Login Data!'), error => console.error('Error storing LoginData', error));
+
+          NativeStorage.setItem('loginpassword', this.account.password)
+            .then(() => console.log('Stored Password Data!'), error => console.error('Error storing Password', error));
         } else {
           let toast = this.toastCtrl.create({
             message: this.loginErrorString,
@@ -51,6 +55,5 @@ export class LoginPage {
   getUserData(){
     return this.userData;
   }
-
 
 }
