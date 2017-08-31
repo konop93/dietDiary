@@ -1,5 +1,5 @@
 
-<img src="gitLogo.png"/>
+<img style="width:100%" src="gitLogo.png"/>
 
 # Dziennik Dietetyczny
 
@@ -8,10 +8,13 @@ Aplikacja wykonana na zajęcia "Bogate Aplikacje Internetowe" na Uniwersytecie E
 ## Funkcjonalności
 
 1. Możliwość monitorowania dziennego spożycia kalorii
-2. Możliwośc wyboru odpowiedniej dla nas diety
-3. Możliwość wyszukania przepisów na dania
-4. Śledzenie aktywności przy pomocy krokomierza
+2. Możliwość wyboru odpowiedniej dla nas diety
+3. Możliwość wybrania spożytych produktów
+4. Możliwość wybrania wykonanych ćwiczeń
+5. Śledzenie aktywności przy pomocy krokomierza
 
+Aplikacja dzięki zdobytym informacjom o użytkowniku oblicza BMI użytkownika.
+Dodatkowo na podstawie wybranej diety obliczane są kalorie, które użytkownik powinien spożyć przed zakończeniem dnia.
 ### Autorzy
 Katarzyna Konopelska 
 Aleksandra Kołodziejczyk
