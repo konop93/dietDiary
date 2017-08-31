@@ -17,7 +17,7 @@ export class ChooseModalComponent {
     this.type = params.get('type');
   };
   closeModalDiet(){
-    this.viewCtrl.dismiss(this.items.id);
+    this.viewCtrl.dismiss(this.items);
   }
   closeModalSuccess() {
     this.calories = Math.floor(Math.random() * 80) + 50;

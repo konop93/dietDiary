@@ -30,6 +30,7 @@ export class DietPage {
   chosenModal(diet) {
     let newModal = this.modalCtrl.create(ChooseModalComponent, {item: diet, type: 'diet'});
     newModal.onDidDismiss((diet) => {
+      this.yourDiet = diet;
       this._userService.saveDiet(diet);
     });
     newModal.present();

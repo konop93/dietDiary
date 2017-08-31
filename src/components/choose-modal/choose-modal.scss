@@ -9,7 +9,7 @@ choose-modal {
     justify-content: center;
     font-size: 20px;
     .modal--section-diet {
-      height: 75%;
+      height: 100%;
       width: 85%;
       display: flex;
       flex-direction: column;
@@ -19,8 +19,8 @@ choose-modal {
         margin:25px;
       }
       .button-content {
-        width: 150px;
-        height: 55px;
+        width: 200px;
+        height: 35px;
         background: #4db6ac;
         color: white;
         font-size: 18px;
@@ -29,7 +29,7 @@ choose-modal {
       }
     }
     .modal--section {
-      height: 45%;
+      height: 100%;
       width: 85%;
       display: flex;
       flex-direction: column;
@@ -39,8 +39,8 @@ choose-modal {
         margin:25px;
       }
       .button-content {
-        width: 150px;
-        height: 55px;
+        width: 200px;
+        height: 35px;
         background: #4db6ac;
         color: white;
         font-size: 18px;
@@ -49,5 +49,4 @@ choose-modal {
       }
     }
   }
-
 }

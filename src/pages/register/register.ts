@@ -32,8 +32,6 @@ export class RegisterPage {
               public user: UserDataProvider,
               public toastCtrl: ToastController,
               public translateService: TranslateService) {
-    this.signupErrorString = 'Błąd podczas rejestracji';
-    this.signupSuccess = 'Rejestracja zakończona powodz podczas rejestracji';
   }
 
   doSignup() {

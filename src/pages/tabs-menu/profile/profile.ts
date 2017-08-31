@@ -23,6 +23,10 @@ export class ProfilePage {
               private _stepCounter: Stepcounter) {
     this.userData = this._userDataService.getUserData();
     this.actualBMI = Math.round(this.userData[0].user_weight / ((this.userData[0].user_height / 100) * (this.userData[0].user_height / 100)));
+    if(this.userData[0].user_diet === 0){
+      this.userData.caloriesPerDay = "Choose diet"
+    }
+
   }
 
   startStepCounter() {
